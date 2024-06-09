@@ -1,14 +1,15 @@
 const URL = "https://reqres.in/api/users?page=1";
 
+let cont=1;
 let utenti =[];
 
 let elListaUtenti = document.querySelector("#listaUtenti");
 
-let btn = document.querySelector("#btn");
 btn.addEventListener("click", mostraUtenti);
 
 function mostraUtenti(){
-fetch(URL)
+
+fetch(`https://reqres.in/api/users?page=${cont++}`)
     .then(data =>{
         console.log(data);
         return data.json();
@@ -21,7 +22,6 @@ fetch(URL)
         });
        
     });
-    URL="https://reqres.in/api/users?page=2";
 }
 
     // setTimeout(()=>{
