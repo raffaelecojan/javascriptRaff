@@ -1,0 +1,128 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family:"aria-label",sans-serif;
+  }
+  
+  body{
+  min-height: 100vh;
+  font-family:'poppins',sans-serif;
+  
+  }
+  .wrapper{
+   min-height: 90vh;
+   padding:0px;
+   display: flex;
+   flex-direction: column;
+   flex-wrap:wrap;
+   gap:0px;
+   font-size:18px;
+   font-family: sans-serif;  
+   
+   height: 800px;
+  }
+  .container-fluid{
+    background:#d9dadf;
+     align-items: center;
+     border :1px solid #dbcece ;
+     top:0;
+     left:0;
+   
+     height: 105px;
+    justify-content: space-between;
+  
+  }
+  
+  .content1{
+      text-align: left;
+      padding:0px;
+      float:left;
+      width: 300px;
+      height: 710px;
+     align-items: left;
+     border :1px solid #0c7b7b ;
+     background:#ffff;
+  }
+  .ricerca-utenti{
+      text-align: left;
+      padding:0px;
+      text-decoration:none;
+     
+  }
+  
+  .main-container{
+  flex:2;
+  display:flex;
+  
+   flex-wrap: wrap;
+   gap:0px;
+  
+  }
+
+  .d-inline-block {
+      padding: 50;
+      font-size:30px;
+      width:220px;
+      height: 78px;
+  }
+  
+
+  .ricerca-utenti{
+      text-align: left;
+      padding:20px;
+      color:#1c1d1c;
+      text-decoration: none;
+  }
+
+.button {
+    top: 50%;
+    background-color: #e90707;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    min-height: 20px; 
+    min-width: 50px;
+
+  }
+
+  .button:hover{
+    background-color: #280cca;
+  }
+
+  .col-5{
+    margin-left: 17%;
+    margin-top: 3%;
+  }
+
+
+/* Stile aggiuntivo per i pulsanti nel pop-up */
+#popupModal .button {
+  margin-right: 10px; /* Aggiunge spazio tra i pulsanti Modifica e Invia */
+  margin-bottom: 10px
+}
+
+
+.modal-content p strong {
+  font-weight: bold;
+  margin-right: 5px; /* Esempio: spazio tra il titolo in grassetto e il testo */
+}
+
+.modal-content {
+  padding: 10px;
+}
+
+
+.modal{
+  width: 1000px;  
+  height: 1000px; 
+  max-width: none;  
+  align-self: center;
+  margin-left: 300px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "aria-label", sans-serif;
+  
+}
+

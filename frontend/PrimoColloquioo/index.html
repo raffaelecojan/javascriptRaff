@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="#">
+            <img src="./img/rotechnology-logo.png" alt="Logo" width="200" height="90" class="d-inline-block align-lef"></a>
+            <ion-icon name="mail" class="icon1" style="float:right"height="90" ></ion-icon>
+            <ion-icon name="person-circle" class="icon" style="float:right"></ion-icon>
+        </div>   
+    </nav>
+   <div class="main-container">
+        <div class="content1">
+        <a href="home5.html" class="link"> 
+        
+            <div class="ricerca-utenti"><br><br><br><br>
+             &nbsp;Ricerca utenti</a><br><br><br>
+             <a href="/Dash2/utenteN.html" class="link"> 
+             &nbsp;Inserimento nuovo utente</a><br><br><br>
+             <a href=".html" class="link"> 
+             &nbsp;Area Colloqui</a><br><br><br>
+             <a href="home5.html" class="link"> 
+             &nbsp;Percorsi e formazione</a><br><br><br>
+    
+        </div>
+   </div>
+
+
+   <div class="col-5">
+    <form id="myForm">
+        <div class="row mb-3">
+            <div class="col-6">
+                <label for="inputNome" class="form-label">Nome *</label>
+                <input type="text" class="form-control" id="inputNome" placeholder="Nome" required>
+            </div>
+            <div class="col-6">
+                <label for="inputCognome" class="form-label">Cognome *</label>
+                <input type="text" class="form-control" id="inputCognome" placeholder="Cognome" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-6">
+                <label for="inputDataCol" class="form-label">Data Colloquio *</label>
+                <input type="text" class="form-control" id="inputDataCol" placeholder="gg/mm/aaaa" maxlength="10" required>
+            </div>
+            <div class="col-6">
+                <label for="inputCitta" class="form-label">Città *</label>
+                <input type="text" class="form-control" id="inputCitta" placeholder="Città" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-6">
+                <label for="inputColDa" class="form-label">Colloquiato da *</label>
+                <input type="text" class="form-control" id="inputColDa" placeholder="Colloquiato da" required>
+            </div>
+            <div class="col-6">
+                <label for="inputAmbito" class="form-label">Ambito *</label>
+                <input type="text" class="form-control" id="inputAmbito" placeholder="Ambito" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-6">
+                <label for="inputEsito" class="form-label">Esito *</label>
+                <input type="text" class="form-control" id="inputEsito" placeholder="Esito" required>
+            </div>
+            <div class="col-6">
+                <label for="inputProvenienza" class="form-label">Provenienza *</label>
+                <input type="text" class="form-control" id="inputProvenienza" placeholder="Provenienza" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <label for="inputNote" class="form-label">Note *</label>
+                <textarea class="form-control" id="inputNote" placeholder="Inserisci note" style="height: 100px" required></textarea>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="form-label">Inserire tutti campi dove riportato il *</label>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3">
+            <button class="button" id="saveButton" type="button">Salva</button>
+            <button type="button" onclick="reset()" class="button">Reset</button>
+        </div>
+    </form> 
+</div>
+
+
+<!-- Pop-up per il recap dei dati -->
+<div id="popupModal" class="modal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Recap dei dati</h5>
+            <button type="button" id="clos2" class="btn-close" onclick="closePopup2()" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+       
+        <p><strong>Nome:</strong> <span id="popupNome"></span></p>
+        <p><strong>Cognome:</strong> <span id="popupCog"></span></p>
+        <p><strong>Data Colloquio:</strong> <span id="popupDataCol"></span></p>
+        <p><strong>Città:</strong> <span id="popupCitta"></span></p>
+        <p><strong>Colloquiato da:</strong> <span id="popupColDa"></span></p>
+        <p><strong>Ambito:</strong> <span id="popupAmbito"></span></p>
+        <p><strong>Esito:</strong> <span id="popupEsito"></span></p>
+        <p><strong>Provenienza:</strong> <span id="popupProv"></span></p>
+        <p><strong>Note:</strong> <span id="popupNote"></span></p>
+
+        <!-- Pulsanti Modifica e Invia -->
+        <div class="d-flex justify-content-end mt-3">
+            <button class="button" onclick="sendData()">Invia</button>
+        </div>
+    </div>
+</div>
+
+<!-- Secondo pop-up per inserire destinatario e oggetto -->
+ 
+<div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Inserisci destinatario e oggetto</h5>
+                <button type="button" id="clos" class="btn-close" onclick="closePopup1()" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="destinatario" class="form-label">Destinatario</label>
+                        <input type="text" class="form-control" name="destinatario" id="destinatario" placeholder="Destinatario">
+                    </div>
+                    <div class="mb-3">
+                        <label for="destinatarioCC" class="form-label">Destinatario in CC</label>
+                        <input type="text" class="form-control" name="destinatarioCC" id="destinatarioCC" placeholder="Destinatario in CC">
+                    </div>
+                    <!-- Scelta oggetto con "altro" che fa apparire una casella di testo -->
+                    <div class="mb-3">
+                        <label for="oggetto" class="form-label">Oggetto</label>
+                        <select class="form-select" id="oggetto" name="oggetto" onchange="showInputField(this)">
+                            <option value="">-- Seleziona oggetto mail --</option>
+                            <option value="Colloquio">Colloquio</option>
+                            <option value="Invito evento">Invito evento</option>
+                            <option value="Aggiornamenti">Aggiornamenti</option>
+                            <option value="Notifica">Notifica</option>
+                            <option value="Urgente">Urgente</option>
+                            <option value="Altro">Altro</option>
+                        </select>
+                    </div>
+                    <div class="mb-3" id="altroInput" style="display: none;">
+                        <label for="altroOggetto" class="form-label">Inserisci l'oggetto</label>
+                        <input type="text" class="form-control" id="altroOggetto" name="altroOggetto">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="button" onclick="sendEmail()">Invia Mail</button>
+            </div>
+            <div id="message"></div>
+        </div>
+    </div>
+</div>
+
+
+
+    
+    <script src="./script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
